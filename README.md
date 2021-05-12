@@ -92,6 +92,10 @@ To install the missing version, run `gem install bundler:2.2.16`
 ```
 このようなエラーが出る場合は、Gemfile.lockの中身を空にしてから`docker-compose build`を実行すること
 
+## Webpacker::Manifest::MissingEntryError in Registrations#new が出た時の対処法
+`docker-compose exec web bundle exec rails webpacker:install`を実行
+`Overwrite /myapp/config/webpacker.yml?`
+のような確認メッセージが出るが、構わず y を実行
 
 ## Dockerコンテナが落ちる問題の対処法
 
