@@ -83,6 +83,16 @@ docker-compose ps
 ```
 ※-aオプションをつけると終了したコンテナも表示される
 
+## Could not find 'bundler' (*.*.*) というエラーが出た時の対処法
+docker-compose build した際に
+```
+/usr/local/lib/ruby/2.6.0/rubygems.rb:283:in `find_spec_for_exe': Could not find 'bundler' (2.2.16) required by your /myapp/Gemfile.lock. (Gem::GemNotFoundException)
+To update to the latest version installed on your system, run `bundle update --bundler`.
+To install the missing version, run `gem install bundler:2.2.16`
+```
+このようなエラーが出る場合は、Gemfile.lockの中身を空にしてから`docker-compose build`を実行すること
+
+
 ## Dockerコンテナが落ちる問題の対処法
 
 #### 発生状態
